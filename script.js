@@ -1,12 +1,18 @@
 function validateSyntax() {
     let input = document.getElementById('petInput').value;
-    // Validation logic goes here
-    let result = ''; // Placeholder for validation result
 
-    // TODO: Write your validation logic here
-        // Check if input starts with 'pet_' and followed by alphanumeric characters
+    let result = ''; 
+// Validation code
+    let regex = /^pet_[a-zA-Z0-9]+$/; // This tells the user in what format it should be.
 
-            document.getElementById('result').innerText = result;
+    if (regex.test(input)) {
+        result = 'Validation passed!'; // If its correct
+    } else {
+        result = 'Validation failed!'; // If its incorrect
+    }
+
+    document.getElementById('result').innerText = result;
 }
+
 
 
